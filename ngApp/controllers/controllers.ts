@@ -1,9 +1,12 @@
 namespace live_exam_practice.Controllers {
 
     export class HomeController {
+      public movies;
 
-      constructor() {
-
+      constructor(
+        private movieService: live_exam_practice.Services.MovieService
+      ) {
+        this.movies = movieService.getMovies();
       }
     }
 
@@ -21,7 +24,7 @@ namespace live_exam_practice.Controllers {
         private movieService: live_exam_practice.Services.MovieService,
         public $state
       ) {
-        
+
       }
     }
 

@@ -7,6 +7,10 @@ namespace live_exam_practice.Services {
       return this.MovieResource.save(movie).$promise;
     }
 
+    public getMovies() {
+      return this.MovieResource.query();
+    }
+
     constructor(
       private $resource
     ) {
