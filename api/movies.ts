@@ -6,6 +6,8 @@ let router = express.Router();
 
 // ADD OR EDIT MOVIE
 router.post('/', (req, res) => {
+  let movie = req.body;
+  movie._id = new mongodb.ObjectID(req.body._id);
   database.db.collection('movies').save(req.body).then((newMovie) => {
     res.json(newMovie);
   })
@@ -13,8 +15,8 @@ router.post('/', (req, res) => {
 
 // GET MOVIES
 router.get('/', (req, res) => {
-  database.db.collection('movies').find().toArray().then((products)=>{
-    res.json(products);
+  database.db.collection('movies').find().toArray().then((movies)=>{
+    res.json(movies);
   })
 });
 

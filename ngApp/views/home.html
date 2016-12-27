@@ -2,5 +2,5 @@
 <a href="/addMovie">Add Movie</a>
 
 <ul>
-  <li ng-repeat="m in vm.movies">{{m.title}}</li>
+  <li ng-repeat="m in vm.movies">{{m.title}} <a href="/editMovie/{{m._id}}">Edit</a></li>
 </ul>

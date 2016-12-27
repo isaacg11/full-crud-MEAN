@@ -20,7 +20,7 @@ namespace live_exam_practice {
                 controllerAs: 'vm'
             })
             .state('Edit', {
-                url: '/editMovie',
+                url: '/editMovie/:id',
                 templateUrl: '/ngApp/views/editMovie.html',
                 controller: live_exam_practice.Controllers.EditMovieController,
                 controllerAs: 'vm'
