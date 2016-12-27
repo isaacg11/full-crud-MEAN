@@ -20,4 +20,12 @@ router.get('/', (req, res) => {
   })
 });
 
+// DELETE MOVIE
+router.delete('/:id', (req, res) => {
+  let movieId = new mongodb.ObjectID(req.params['id']);
+  database.db.collection('movies').remove({_id:movieId}).then(()=> {
+    res.sendStatus(200);
+  });
+});
+
 export default router;

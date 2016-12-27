@@ -3,8 +3,17 @@ namespace live_exam_practice.Controllers {
     export class HomeController {
       public movies;
 
+      public deleteMovie(id) {
+        this.movieService.deleteMovie(id).then(() => {
+          this.$window.location.reload();
+        })
+      }
+
       constructor(
-        private movieService: live_exam_practice.Services.MovieService
+        private movieService: live_exam_practice.Services.MovieService,
+        public $window,
+        public $location,
+        public $state
       ) {
         this.movies = movieService.getMovies();
       }

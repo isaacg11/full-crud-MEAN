@@ -11,6 +11,10 @@ namespace live_exam_practice.Services {
       return this.MovieResource.query();
     }
 
+    public deleteMovie(id) {
+      return this.MovieResource.delete({id: id}).$promise;
+    }
+
     constructor(
       private $resource
     ) {
